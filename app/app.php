@@ -13,6 +13,9 @@ ExceptionHandler::register();
 $app->register(new Silex\Provider\DoctrineServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../views',
+    'twig.options' => array(
+        'cache'=> __DIR__ . '/../var/cache/twig',
+    )
 ));
 $app->register(new Silex\Provider\AssetServiceProvider(), array(
     'assets.version' => 'v1'
@@ -80,6 +83,7 @@ $app->register(new Silex\Provider\ValidatorServiceProvider());
     }
     return $app['twig']->render('error.html.twig', array('message' => $message));
 });*/
+
 // Register JSON data decoder for JSON requests
 $app->before(function (Request $request) {
     if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {

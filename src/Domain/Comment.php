@@ -37,12 +37,6 @@ class Comment
      */
     private $website;
 
-    /**
-     * Reported comment.
-     *
-     * @var integer
-     */
-    private $reported;
 
 
     public function getId() {
@@ -90,11 +84,5 @@ class Comment
         return $this;
     }
 
-    public function getReported(){
-        return $this->reported;
-    }
-    public function setReported($reported){
-        $this->reported = $reported;
-        return $this;
-    }
+
 }

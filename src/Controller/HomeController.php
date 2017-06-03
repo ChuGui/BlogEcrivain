@@ -51,18 +51,7 @@ class HomeController {
             'commentForm' => $commentFormView));
     }
 
-    /**
-     * Report comment controller.
-     *
-     * @param integer $id Comment id
-     * @param Application $app Silex application
-     */
-    public function reportCommentAction($id, Application $app) {
-        // Report a comment
-        $app['dao.comment']->reportComment($id);
-        $app['session']->getFlashBag()->add('success', 'The article was reported. Thank you for helping');
 
-    }
 
     /**
      * User login controller.

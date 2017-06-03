@@ -165,15 +165,4 @@ class CommentDAO extends DAO
         $this->getDb()->delete('t_comment', array('usr_id' => $userId));
     }
 
-    /**
-     * Report a comment by add +1 to com_reported integer.
-     *
-     * @param integer $id The comment id.
-     * @param integer $reporte The number off report.
-     */
-    public function commentReported($id) {
-        // Report a comment by adding +1 to com_reported
-        $this->getDb()->update('t_comment', array('com_id'=>$id, 'com_reported'=>+1));
-    }
-
 }
